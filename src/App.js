@@ -10,7 +10,8 @@ class App extends Component{
       super();
       this.state = {
         robots : [],
-        searchfield : ''
+        searchfield : '',
+        showHex : false
       }
       this.fetch()
   }
@@ -34,6 +35,12 @@ class App extends Component{
   copyHex(){
     console.log()
   }
+
+  _showHex = (bool) =>{
+    this.setState({
+    showHex: bool
+    });
+  }
   
   render(){
     const {robots, searchfield} = this.state;
@@ -51,7 +58,12 @@ class App extends Component{
           <div className="col-sm-6"> */}
             {
               filteredRobots.map(col=>(
-                <div className = "filterdiv" style={{backgroundColor:col.hexvalue}} onClick = {this.copyHex}>{col.name}</div>
+                <div className = "filterdiv" style={{backgroundColor:col.hexvalue}} onClick = {this._showHex.bind(null, true)}>{col.name}
+                  {/* <button onClick={this._showHex.bind(null, true)}>show</button>
+                  <button onClick={this._showHex.bind(null, false)}>hide</button> */}
+                  { this.state.showHex && (<div>{col.hexvalue}</div>) }
+                </div>
+                
               ))
             } 
         </div>
