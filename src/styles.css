@@ -1,0 +1,11 @@
+td{
+    min-width: 3rem !important;
+    line-height: 2em !important;
+    font-size: 1em !important;
+    padding: 0.5rem !important;
+  }
+  
+  td:first-child{
+    cursor: pointer !important;
+  }
+  
