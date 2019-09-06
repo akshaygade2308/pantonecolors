@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 import Searchbox from './Searchbox';
 import 'tachyons';
 import axios from 'axios';
+import Button from 'antd/es/button';
+
+import Scrollbar from './Scrollbar'
 
 class App extends Component{
   constructor(){
@@ -11,7 +14,8 @@ class App extends Component{
       this.state = {
         robots : [],
         searchfield : '',
-        showHex : false
+        showHex : false,
+        showColors : false
       }
       this.fetch()
   }
@@ -41,6 +45,13 @@ class App extends Component{
     showHex: bool
     });
   }
+
+  _showColors = (bool1) =>{
+    this.setState({
+      showColors : bool1
+    });
+  }
+  
   
   render(){
     const {robots, searchfield} = this.state;
@@ -52,22 +63,38 @@ class App extends Component{
     return <h1>Loading</h1>
   }else{
     return (
-      <div className = "robdiv">
-        <Searchbox searchChange = {this.onSearchChange} />
-        {/* <div className="row">
-          <div className="col-sm-6"> */}
-            {
-              filteredRobots.map(col=>(
-                <div className = "filterdiv" style={{backgroundColor:col.hexvalue}} onClick = {this._showHex.bind(null, true)}>{col.name}
-                  {/* <button onClick={this._showHex.bind(null, true)}>show</button>
-                  <button onClick={this._showHex.bind(null, false)}>hide</button> */}
-                  { this.state.showHex && (<div>{col.hexvalue}</div>) }
-                </div>
-                
-              ))
-            } 
-        </div>
-           
+        <div>
+        
+        {/* The toogle button */}
+        <Button type="primary" onClick={this._showColors.bind(null, true)}>show</Button>
+        { this.state.showColors && 
+          (
+          <div>
+            <div className = "robdiv">
+
+          <Searchbox searchChange = {this.onSearchChange} />
+          {/* <div className="row">
+            <div className="col-sm-6"> */}
+            <Scrollbar>
+              {
+                filteredRobots.map(col=>(
+                  <div className = "filterdiv" style={{backgroundColor:col.hexvalue, display: 'inline-block', width : '25px', height : '25px'}} /* onClick = {this._showHex.bind(null, true)} */>
+                    {/* <button onClick={this._showHex.bind(null, true)}>show</button>
+                    <button onClick={this._showHex.bind(null, false)}>hide</button> */}
+                    { this.state.showHex && (<div>{col.hexvalue}</div>) }
+                  </div>
+                  
+                ))
+              } 
+            </Scrollbar>
+              
+          </div>
+          </div>
+          ) 
+        }
+
+        
+      </div>
       // </div>
       // </div>
       
