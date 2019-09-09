@@ -17,9 +17,11 @@ class App extends Component{
         // colors : [],
         // searchfield : '',
         // showHex : false,
-        // showColors : false
+        // showColors : false,
+        selectedColor : {}
       }
       // this.fetch()
+      this.getColor = this.getColor.bind(this)
   }
 
   // fetch(){
@@ -42,24 +44,29 @@ class App extends Component{
   //   console.log()
   // }
 
-  _showHex = () =>{
-    this.setState({
-    showHex: !this.state.showHex
-    });
-  }
+  // _showHex = () =>{
+  //   this.setState({
+  //   showHex: !this.state.showHex
+  //   });
+  // }
 
   // _showColors = (bool1) =>{
   //   this.setState({
   //     showColors : bool1
   //   });
-  // }
+  // } 
 
-
+  getColor(Hex){
+    this.setState({
+      selectedColor : Hex
+    })
+    console.log(Hex)
+  }
   
   render(){
     return(
       <div>
-        <Color></Color>
+        <Color consoleColor={this.getColor}></Color>
       </div>
     );
 
