@@ -18,7 +18,8 @@ class App extends Component{
         // searchfield : '',
         // showHex : false,
         // showColors : false,
-        selectedColor : {}
+        selectedColor : {},
+
       }
       // this.fetch()
       this.getColor = this.getColor.bind(this)
@@ -66,7 +67,7 @@ class App extends Component{
   render(){
     return(
       <div>
-        <Color consoleColor={this.getColor}></Color>
+        <Color consoleColor={this.getColor} noOfColorsToRender = {this.props.noOfColorsToRender || 70}></Color>
       </div>
     );
 

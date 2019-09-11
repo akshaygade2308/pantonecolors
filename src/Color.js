@@ -5,6 +5,7 @@ import Button from 'antd/es/button';
 import { Popover } from 'antd';
 import Scrollbar from './Scrollbar';
 import Searchbox from './Searchbox';
+// const palatte = require(`!rawloader!../public/Images/colorplate.svg`)
 
 class Color extends Component{
     constructor(props){
@@ -12,6 +13,7 @@ class Color extends Component{
         this.state = {
             colors : [],
             searchfield : '',
+            colorsToRender : this.props.noOfColorsToRender
             // showHex : false,
             // showColors : false
         }
@@ -41,6 +43,12 @@ class Color extends Component{
         this.setState({searchfield: event.target.value})
     }
 
+    handleClick(){
+        this.setState({
+            colorsToRender : this.state.colorsToRender + this.props.noOfColorsToRender
+        })
+    }
+
     // colorOnClick(hex) {
     //     console.log('hex', hex)
     //     // this.props.consoleHex(hex)
@@ -56,13 +64,14 @@ class Color extends Component{
         const content = (
         <div className = "contentdiv">
             
-            
+                   
             <Searchbox searchChange = {this.onSearchChange} />
             <div className = "topfilter">
                 <Scrollbar>
-                {    
-                filteredColors.map(col=>(
-                    <div className = "filterdiv" style={{backgroundColor:col.hexvalue, display: 'inline-block', width : '25px', height : '25px', borderRadius : '3px', marginLeft : '3px'}} 
+                {   
+                filteredColors.slice(0,this.state.colorsToRender).map(col=>(
+                    <div className = "filterdiv" style={{backgroundColor:col.hexvalue, display: 'inline-block', width : '25px', height : '25px', borderRadius : '3px', marginLeft : '7px',
+                        boxShadow : '3px 2px 2px gray'}} 
                         onClick={() => this.props.consoleColor(col)}
                     // onClick={this.props.hexShow}
                     >
@@ -72,8 +81,9 @@ class Color extends Component{
                     </div>
 
                 ))
-                } 
-            </Scrollbar>
+                }
+                <button onClick = {() =>this.handleClick()}>View More</button>
+                </Scrollbar>
             </div>
             
         </div>
