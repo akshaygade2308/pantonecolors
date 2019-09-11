@@ -25,3 +25,8 @@
   display: inline-block;
   margin-left: 0%;
 }
+
+.palettediv svg{
+  height: 3rem;
+  width: 3rem;
+}

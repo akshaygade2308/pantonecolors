@@ -5,7 +5,7 @@ import Button from 'antd/es/button';
 import { Popover } from 'antd';
 import Scrollbar from './Scrollbar';
 import Searchbox from './Searchbox';
-// const palatte = require(`!rawloader!../public/Images/colorplate.svg`)
+const palatte = require(`!raw-loader!./Images/colorplate.svg`)
 
 class Color extends Component{
     constructor(props){
@@ -88,6 +88,7 @@ class Color extends Component{
             
         </div>
         );
+    console.log(palatte)
     
     if(colors.length === 0){
         return <h1>Loading</h1>
@@ -97,7 +98,7 @@ class Color extends Component{
             <div className = "popdiv">
             
             <Popover className = "pop" placement="bottom" content={content} trigger="click">
-                <Button className = "button1">Colors</Button>
+                <div className = "palettediv" dangerouslySetInnerHTML = {{__html : palatte.default}} />
             </Popover>
 
             </div>
