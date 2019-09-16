@@ -67,11 +67,11 @@ class App extends Component{
   render(){
     return(
       <div>
-        <Color consoleColor={this.getColor} noOfColorsToRender = {this.props.noOfColorsToRender || 70}></Color>
+        <Color consoleColor={this.getColor} noOfColorsToRender = {this.props.noOfColorsToRender || 84} widthProp = {this.props.widthProp || 25} heightProp = {this.props.heightProp || 25}></Color>
       </div>
     );
 
-
+ 
 
 
 

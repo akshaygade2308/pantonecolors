@@ -2,6 +2,11 @@ import React from 'react'
 import './Searchstyle.css'
 
 const Searchbox = ({searchfield, searchChange}) => {
+
+    function reduce(){
+        
+    }
+
     return(
         <div className = "searchdiv">
             

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import axios from 'axios';
-import Button from 'antd/es/button';
+// import Button from 'antd/es/button';
 import { Popover } from 'antd';
 import Scrollbar from './Scrollbar';
 import Searchbox from './Searchbox';
@@ -30,7 +30,7 @@ class Color extends Component{
         axios
           .get('/pantone.json')
           .then( response => {
-            console.log(response.data)
+            // console.log(response.data)
               this.setState({ 
               colors: response.data, 
             });
@@ -54,6 +54,26 @@ class Color extends Component{
     //     // this.props.consoleHex(hex)
     // }
 
+    // componentWillMount = props => {
+    //     this.clickTimeout = null
+    //   }
+      
+    //   handleClicks = () => {
+    //     if (this.clickTimeout !== null) {
+    //       console.log('double click executes')
+    //       clearTimeout(this.clickTimeout)
+    //       this.clickTimeout = null
+    //     } else {
+    //       console.log('single click')  
+    //       this.clickTimeout = setTimeout(()=>{
+    //       console.log('first click executes ')
+    //       clearTimeout(this.clickTimeout)
+    //         this.clickTimeout = null
+    //       }, 2000)
+    //     }
+    //   }
+
+
     render(){
         
         const {colors, searchfield} = this.state;
@@ -67,10 +87,10 @@ class Color extends Component{
                    
             <Searchbox searchChange = {this.onSearchChange} />
             <div className = "topfilter">
-                <Scrollbar>
+                <Scrollbar> 
                 {   
                 filteredColors.slice(0,this.state.colorsToRender).map(col=>(
-                    <div className = "filterdiv" style={{backgroundColor:col.hexvalue, display: 'inline-block', width : '25px', height : '25px', borderRadius : '3px', marginLeft : '7px',
+                    <div className = "filterdiv" title = {col.hexvalue} style={{backgroundColor:col.hexvalue, display: 'inline-block', width : this.props.widthProp, height : this.props.heightProp, borderRadius : '3px', marginLeft : '7px',
                         boxShadow : '3px 2px 2px gray'}} 
                         onClick={() => this.props.consoleColor(col)}
                     // onClick={this.props.hexShow}
@@ -78,17 +98,17 @@ class Color extends Component{
                     {/* <button onClick={this._showHex.bind(null, true)}>show</button>
                     <button onClick={this._showHex.bind(null, false)}>hide</button> */}
                     {/* { this.state.showHex && (<div>{col.hexvalue}</div>) } */}
-                    </div>
 
+                    </div>
                 ))
                 }
-                <button onClick = {() =>this.handleClick()}>View More</button>
+                
                 </Scrollbar>
-            </div>
-            
+            </div><br></br>
+            <button className = "viewButton" onClick = {() =>this.handleClick()}>View More</button>
         </div>
         );
-    console.log(palatte)
+    // console.log(palatte)
     
     if(colors.length === 0){
         return <h1>Loading</h1>
@@ -98,7 +118,7 @@ class Color extends Component{
             <div className = "popdiv">
             
             <Popover className = "pop" placement="bottom" content={content} trigger="click">
-                <div className = "palettediv" dangerouslySetInnerHTML = {{__html : palatte.default}} />
+                <div className = "palettediv" dangerouslySetInnerHTML = {{__html : palatte.default}}  /* onClick={() => this.handleClicks()} *//>
             </Popover>
 
             </div>
