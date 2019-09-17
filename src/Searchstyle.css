@@ -1,7 +1,11 @@
 .searchdiv{
     width: 230px;
     /* height: 10px; */
-    margin-left: 20px;
+    margin-left: 7px;
     /* margin-bottom: 20px; */
-    /* margin-top: 400px; */
+    margin-top: 7px;
+}
+
+.inputClass{
+    padding: 5px !important;
 }

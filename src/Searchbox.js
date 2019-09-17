@@ -3,21 +3,20 @@ import './Searchstyle.css'
 
 const Searchbox = ({searchfield, searchChange}) => {
 
-    function reduce(){
+    // function reduce(){
         
-    }
+    // }
 
     return(
         <div className = "searchdiv">
             
             <input 
-            className = "pa3 ba b--green bg-lightest-blue" 
-            type = "search" 
-            placeholder = "search pantone colors"
-            onChange = {searchChange}
-            >
+                className = "inputClass" 
+                type = "search" 
+                placeholder = "search pantone colors"
+                onChange = {searchChange}>
             </input>
-            </div>
+        </div>
         
     )
 }
