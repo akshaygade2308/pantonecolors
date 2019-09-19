@@ -7,33 +7,32 @@
 }
 
 .filterdiv{
-  width: 400px;
   cursor: pointer;
   transition: transform .2s;
+  
 }
 
 .filterdiv:hover {
   transform: scale(1.2);
 }
 
-.pop{
+/* .pop{
   margin-top: 7px;
   margin-left: 7x;
-}
+} */
 
 .viewButton{
   margin-left: 20px;
 }
 
 .contentdiv{
-  /* margin-left: 20px;
-  margin-top: 40px; */
-  /* background-color: #cccccc30; */
-  width: 500px;
+  margin-left: 20px;
+  background-color: #cccccc30;
+  /* width: 500px; */
 }
 
 .topfilter{
-  width: 500px;
+  /* width: 500px; */
   display: inline-block;
   margin-left: 0%;
 }
@@ -42,3 +41,4 @@
   height: 3rem;
   width: 3rem;
 }
+
