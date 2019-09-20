@@ -87,7 +87,6 @@ class Color extends Component{
                                 </div>     
                             ))
                             }
-
                             </Scrollbar>
                         </div>
                     </div>
@@ -105,12 +104,9 @@ class Color extends Component{
                         <div style = {{paddingLeft : '2px', display : 'inline-block'}}>g:{this.hexToRgb(this.props.selectedColor.hexvalue) && this.hexToRgb(this.props.selectedColor.hexvalue).g}</div>
                         <div style = {{paddingLeft : '2px', display : 'inline-block'}}>b:{this.hexToRgb(this.props.selectedColor.hexvalue) && this.hexToRgb(this.props.selectedColor.hexvalue).b}</div>
                     </div>
-                </div> : null}
-                    
+                </div> : null} 
                 </div>   
-                    
-                        {/* <button className = "viewButton" onClick = {() =>this.handleClick()}>View More</button> */}
-
+                    {/* <button className = "viewButton" onClick = {() =>this.handleClick()}>View More</button> */}
                 </div>
             </div>
         );
@@ -123,16 +119,13 @@ class Color extends Component{
             return (
                 <div>
                     <div className = "popdiv">
-                    
                         <Popover className = "pop" placement="bottom" content={content} trigger="click">
                             <div className = "palettediv" dangerouslySetInnerHTML = {{__html : palatte.default}}  /* onClick={() => this.handleClicks()} *//>
                         </Popover>
-
                     </div>
                 </div>
             )
         }
     }
 }
-
 export default Color;

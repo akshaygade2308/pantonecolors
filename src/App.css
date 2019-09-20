@@ -9,17 +9,11 @@
 .filterdiv{
   cursor: pointer;
   transition: transform .2s;
-  
 }
 
 .filterdiv:hover {
   transform: scale(1.2);
 }
-
-/* .pop{
-  margin-top: 7px;
-  margin-left: 7x;
-} */
 
 .viewButton{
   margin-left: 20px;
@@ -28,11 +22,9 @@
 .contentdiv{
   margin-left: 20px;
   /* background-color: #cccccc30; */
-  /* width: 500px; */
 }
 
 .topfilter{
-  /* width: 500px; */
   display: inline-block;
   margin-left: 0%;
 }
@@ -41,4 +33,3 @@
   height: 3rem;
   width: 3rem;
 }
-
