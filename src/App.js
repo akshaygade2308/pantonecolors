@@ -22,7 +22,7 @@ class App extends Component{
   render(){
     return(
       <div>
-        <Color consoleColor={this.getColor} noOfColorsToRender = {this.props.noOfColorsToRender || 84} widthProp = {this.props.widthProp || 40} heightProp = {this.props.heightProp || 25}></Color>
+        <Color selectedColor={this.state.selectedColor} consoleColor={this.getColor} noOfColorsToRender = {this.props.noOfColorsToRender || 84} widthProp = {this.props.widthProp || 40} heightProp = {this.props.heightProp || 25} />
       </div>
     );
 

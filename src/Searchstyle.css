@@ -4,4 +4,20 @@
 
 .inputClass{
     padding: 5px !important;
+    border-radius: 0px !important;
+}
+
+input{
+    background-image: url('./Images/search.png');
+    background-position: 400px center;
+    background-repeat: no-repeat;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 2s;
+    transition: all 0.2s;
+    border-radius: 0px !important;
+}
+
+input:backgroung-image{
+    width: 10px;
+    height: 10px;
 }
