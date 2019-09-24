@@ -68,9 +68,9 @@ class Color extends Component{
 
         const content = (
             <div className = "row">    
-                <div className = "contentdiv col-xs-12 col-sm-8">   
+                <div className = "contentdiv col-xs-12 col-sm-8"> 
                 <div className = "row">
-                   <div className = "col-xs-12 col-sm-6">
+                   <div className = "col-xs-12 col-sm-6" style = {{backgroundColor: '#white', border: '1px black', borderStyle: 'ridge', boxShadow: '4px 6px #C0C0C0', /* borderRadius: '5px' */}}>
                    <Searchbox searchChange = {this.onSearchChange} />
                         <div>
                             <Scrollbar>
@@ -90,12 +90,11 @@ class Color extends Component{
                             </Scrollbar>
                         </div>
                     </div>
-                    {this.props.selectedColor.hexvalue ? <div className = "col-xs-12 col-sm-2" style = {{marginLeft: '0px', paddingLeft : '10px'}}>
+                    {this.props.selectedColor.hexvalue ? <div className = "col-xs-12 col-sm-2" style = {{marginLeft: '0px', paddingLeft : '30px'}}>
                     <div className = "row" style = {{height: '130px', backgroundColor: this.props.selectedColor.hexvalue || ''}}>
-                        {/* <div>
-                            {this.props.selectedColor.hexvalue}
-                        </div> */}
                     </div>
+
+                    <div>
                     <div className = "row" style = {{paddingTop : '10px', justifyContent : 'center', fontSize : '15px', fontFamily : 'sans-serif'}}>
                         {this.props.selectedColor.hexvalue}
                     </div>
@@ -104,7 +103,9 @@ class Color extends Component{
                         <div style = {{paddingLeft : '2px', display : 'inline-block'}}>g:{this.hexToRgb(this.props.selectedColor.hexvalue) && this.hexToRgb(this.props.selectedColor.hexvalue).g}</div>
                         <div style = {{paddingLeft : '2px', display : 'inline-block'}}>b:{this.hexToRgb(this.props.selectedColor.hexvalue) && this.hexToRgb(this.props.selectedColor.hexvalue).b}</div>
                     </div>
-                </div> : null} 
+                    </div>
+                </div> : null}
+                <div className = "col-xs-12 col-sm-4"></div>
                 </div>   
                     {/* <button className = "viewButton" onClick = {() =>this.handleClick()}>View More</button> */}
                 </div>
@@ -118,7 +119,7 @@ class Color extends Component{
         }else{
             return (
                 <div>
-                    <div className = "popdiv">
+                    <div className = "popdiv" style = {{paddingLeft: '10px', paddingTop: '10px'}}>
                         <Popover className = "pop" placement="bottom" content={content} trigger="click">
                             <div className = "palettediv" dangerouslySetInnerHTML = {{__html : palatte.default}}  /* onClick={() => this.handleClicks()} *//>
                         </Popover>
