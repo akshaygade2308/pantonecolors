@@ -22,7 +22,6 @@
 .contentdiv{
   margin-left: 20px;
   /* background-color: #e6e1e1f8; */
-  
 }
 
 .topfilter{
@@ -33,4 +32,9 @@
 .palettediv svg{
   height: 3rem;
   width: 3rem;
+}
+
+.ant-popover-placement-bottomLeft{
+  padding-top: 10px;
+  width: 30% !important;
 }
