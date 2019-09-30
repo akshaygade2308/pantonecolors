@@ -107,7 +107,7 @@ class Color extends Component{
                                 </Scrollbar>
                             </div>
                         </div>
-                        {this.props.selectedColor.hexvalue ? <div className = "col-xs-12 col-sm-5" style = {{marginLeft: '0px', paddingLeft : '30px', paddingTop: '20px'}}>
+                        {this.props.selectedColor.hexvalue ? <div className = "col-xs-12 col-sm-5" style = {{marginLeft: '0px', padding : '20px auto'/* , paddingTop: '20px' */, justifyContent : 'center'}}>
                         <div className = "row" style = {{height: '100px', backgroundColor: this.props.selectedColor.hexvalue || ''}}>
                         </div>
 

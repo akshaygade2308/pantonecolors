@@ -38,3 +38,38 @@
   padding-top: 10px;
   width: 30% !important;
 }
+
+@media (max-width: 600px){
+  .ant-popover-placement-bottomLeft{
+    width: 100% !important;
+    justify-content : 'center'
+  }
+}
+
+@media (min-width: 601px) and (max-width: 767px){
+  .ant-popover-placement-bottomLeft{
+    width: 70% !important;
+    justify-content : 'center'
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .ant-popover-placement-bottomLeft{
+    width: 60% !important;
+    justify-content : 'center'
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+  .ant-popover-placement-bottomLeft{
+    width: 40% !important;
+    justify-content : 'center'
+  }
+}
+
+/* @media (min-width: 1200px){
+  .ant-popover-placement-bottomLeft{
+    width: 100% !important;
+    justify-content : 'center'
+  }
+} */
