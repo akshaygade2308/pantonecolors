@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import axios from 'axios';
-import { Popover, Button } from 'antd';
+import { Popover/* , Button */ } from 'antd';
 import Scrollbar from './Scrollbar';
 import Searchbox from './Searchbox';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -36,6 +36,7 @@ class Color extends Component{
               this.setState({ 
               colors: response.data, 
             });
+            this.props.setSelectedColor(response.data[0])
           })
           .catch((err)=> {})
     }
@@ -86,7 +87,7 @@ class Color extends Component{
                     <div /* className = "col-lg-8" style = {{backgroundColor: 'white', padding : '10px', borderRadius: '3px', boxShadow: '3px 5px #d3d3d3'}} */>
                     <div className = "col-xs-12 col-sm-6" style = {{backgroundColor: '#white'/*  border: '1px black', borderStyle: 'ridge', boxShadow: '4px 6px #C0C0C0', borderRadius: '5px' */}}>
                     <Searchbox searchChange = {this.onSearchChange} />
-                            <div>
+                            <div className = "foo">
                                 <Scrollbar>
                                 {
                                 filteredColors.slice(0,this.state.colorsToRender).map(col=>(
@@ -107,8 +108,8 @@ class Color extends Component{
                                 </Scrollbar>
                             </div>
                         </div>
-                        {this.props.selectedColor.hexvalue ? <div className = "col-xs-12 col-sm-5" style = {{marginLeft: '0px', padding : '20px auto'/* , paddingTop: '20px' */, justifyContent : 'center'}}>
-                        <div className = "row" style = {{height: '100px', backgroundColor: this.props.selectedColor.hexvalue || ''}}>
+                        {this.props.selectedColor.hexvalue ? <div className = "col-xs-12 col-sm-5" style = {{marginLeft: '0px', padding : '20px auto'/* , paddingTop: '20px' */}}>
+                        <div className = "row" style = {{height: '100px', justifyContent : 'center', backgroundColor: this.props.selectedColor.hexvalue || ''}}>
                         </div>
 
                         <div>
@@ -144,7 +145,8 @@ class Color extends Component{
                     onVisibleChange={this.handleVisibleChange}
                     placement="bottomLeft"
                 >
-                    <Button type="primary">Color picker</Button>
+                    {/* <Button type="primary">Color picker</Button> */}
+                    <div className = "palettediv" dangerouslySetInnerHTML = {{__html: palatte.default}} />
                 </Popover>
                 </div>
                 </div>
