@@ -14,14 +14,13 @@
     "react-ajax": "^0.1.1",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1",
+    "source-map-support": "^0.5.13",
     "tachyons": "^4.11.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-
-    "test": "jest --watchAll",
-    
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -38,10 +37,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "react-addons-test-utils": "^15.6.2"
   }
 }
